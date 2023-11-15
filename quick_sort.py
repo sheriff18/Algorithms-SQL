@@ -5,11 +5,12 @@ def quicksort(nums):
     sel = nums[0]
     left = []
     right = []
+    n = len(nums)
 
-    for i in range(1,n):
+    for i in range(1, n):
         if nums[i] <= sel:
             left.append(nums[i])
         else:
             right.append(nums[i])
     
-    return left + sel + right
+    return quicksort(left) + [sel] + quicksort(right)
