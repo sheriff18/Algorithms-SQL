@@ -10,4 +10,4 @@ SELECT  department_name AS Department,employee_name AS Employee,
        salary
 FROM cte 
 WHERE rn <= 3
-ORDER BY salary desc;
+
