@@ -4,7 +4,7 @@ WITH cte AS (
            salary,
            DENSE_RANK() OVER (PARTITION BY d.id ORDER BY salary desc) AS rn
     FROM employee e
-    LEFT JOIN department d ON d.id = e.departmentID AND d.name != e.name
+    LEFT JOIN department d ON d.id = e.departmentID 
 )
 SELECT  department_name AS Department,employee_name AS Employee, 
        salary
