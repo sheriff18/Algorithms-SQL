@@ -7,4 +7,4 @@ class Solution:
             s[j],s[i] = s[i],s[j]
             j -= 1
             i += 1
-        return s 
+        return s
