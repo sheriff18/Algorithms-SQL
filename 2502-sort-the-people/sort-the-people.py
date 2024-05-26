@@ -3,7 +3,7 @@ class Solution:
         n = len(names)
         
     
-        for i in range(n - 1):
+        for i in range(n):
             max_index = i
             for j in range(i + 1, n):
 
