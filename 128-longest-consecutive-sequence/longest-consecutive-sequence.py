@@ -1,24 +1,26 @@
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:
         
-        nums.sort()
+        
         n = len(nums)
-        cnt = 0
-        longest = 1
-        last_smaller = float('-inf')
         if n == 0:
             return 0
-        
-        for j in range(n):
-            if nums[j]-1 == last_smaller:
-                cnt += 1
-                last_smaller = nums[j]
-            elif nums[j] != last_smaller:
+
+        longest = 1
+        st = set()
+        # put all the array elements into set
+        for i in range(n):
+            st.add(nums[i])
+
+        # Find the longest sequence
+        for it in st:
+            # if 'it' is a starting number
+            if it - 1 not in st:
+                # find consecutive numbers
                 cnt = 1
-                last_smaller = nums[j]
-            longest = max(longest, cnt)
+                x = it
+                while x + 1 in st:
+                    x += 1
+                    cnt += 1
+                longest = max(longest, cnt)
         return longest
-        
-      
- 
-        
