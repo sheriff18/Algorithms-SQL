@@ -1,15 +1,11 @@
+from collections import Counter
 class Solution:
     def majorityElement(self, nums: List[int]) -> List[int]:
         n = len(nums)
         threshold = n//3
 
-        hm = {}
+        hm = Counter(nums)
 
-        for num in nums:
-            if num in hm:
-                hm[num] += 1
-            else:
-                hm[num] = 1
         outcome = []
         for key,value in hm.items():
             if value > threshold:
