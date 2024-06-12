@@ -25,14 +25,16 @@ class Solution:
                         k += 1
                     else:
                         arr.append([nums[i], nums[j], nums[k], nums[l]])
-
-                        # Skip duplicates for k and l
-                        while k < l and nums[k] == nums[k + 1]:
-                            k += 1
-                        while k < l and nums[l] == nums[l - 1]:
-                            l -= 1
-
                         k += 1
                         l -= 1
+
+                        # Skip duplicates for k and l
+                        while k < l and nums[k] == nums[k - 1]:
+                            k += 1
+                        while k < l and nums[l] == nums[l + 1]:
+                            l -= 1
+
+                        
+                
 
         return arr
