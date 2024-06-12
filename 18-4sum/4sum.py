@@ -5,11 +5,11 @@ class Solution:
         arr = []
         nums.sort()
 
-        for i in range(n - 3):
+        for i in range(n):
             if i > 0 and nums[i] == nums[i - 1]:
                 continue
             
-            for j in range(i + 1, n - 2):
+            for j in range(i + 1, n):
                 if j > i + 1 and nums[j] == nums[j - 1]:
                     continue
                 
