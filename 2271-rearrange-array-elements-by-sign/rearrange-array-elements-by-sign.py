@@ -1,18 +1,22 @@
 class Solution:
     def rearrangeArray(self, nums: List[int]) -> List[int]:
+
         n = len(nums)
-        ans = [0]*n
-        pos_index = 0
-        neg_index = 1
+        pos = 0
+        neg = 1
+  
+        arr = [0]*n
 
         for i in range(n):
-            if nums[i] > 0:
-                ans[pos_index] = nums[i]
-                pos_index += 2
-            
+            if nums[i] < 0:
+                arr[neg] = nums[i]
+                neg+= 2
             else:
-                ans[neg_index] = nums[i]
-                neg_index += 2
+                arr[pos] = nums[i]
+                pos+= 2
         
-        return ans
+
+        
+
+        return arr
         
