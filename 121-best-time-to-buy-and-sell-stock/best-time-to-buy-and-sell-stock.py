@@ -3,22 +3,11 @@ class Solution:
         n = len(prices)
         
         min_price = prices[0]
-        profit = 0
+        maxProfit = 0
 
-        for i in range(n):
-            maxProfit = prices[i] - min_price
-            profit = max(maxProfit,profit)
-            min_price = min(min_price,prices[i])
-
-        return profit
-
-
-
-
-        
-        
-        
-	
-  
-
+        for i in range(1,n):
+            profit = prices[i] - min_price
+            maxProfit = max(maxProfit,profit)
+            min_price = min(min_price, prices[i])
+        return maxProfit
         
