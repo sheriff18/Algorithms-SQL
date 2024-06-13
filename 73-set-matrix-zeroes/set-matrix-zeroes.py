@@ -5,15 +5,17 @@ class Solution:
         arr = []
        
       
-        for row in range(m):
-            for col in range(n):
-                if matrix[row][col] == 0:
-                    arr.append([row,col])
-        
+        for i in range(m):
+            for j in range(n):
+                if matrix[i][j] == 0:
+                    arr.append([i,j])
+
+
         for i,j in arr:
-            for row in range(m):
-                matrix[row][j] = 0
             for col in range(n):
                 matrix[i][col] = 0
+            
+            for row in range(m):
+                matrix[row][j] = 0
 
         return matrix
