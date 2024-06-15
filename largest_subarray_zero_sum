@@ -1,0 +1,23 @@
+https://www.geeksforgeeks.org/find-the-largest-subarray-with-0-sum/
+
+#Your task is to complete this function
+#Your should return the required output
+class Solution:
+    def maxLen(self, n, arr):
+        maxLen = 0
+        Sum = 0
+        hm = {}
+        
+        for i  in range(n):
+            Sum += arr[i]
+            if Sum == 0:
+                maxLen = max(maxLen, i+1)
+                
+            if Sum in hm:
+                length = i - hm[Sum]
+                maxLen = max(maxLen, length)
+            
+            if Sum not in hm:
+                hm[Sum] = i
+                
+        return maxLen
