@@ -8,10 +8,10 @@ class Solution:
         for i in range(n):
             if nums[i] < expected:
                 moves += expected - nums[i]
-                expected += 1
+                
             else:
                 expected = nums[i]
-                expected += 1
+            expected += 1
         
         return moves
 
