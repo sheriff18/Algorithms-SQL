@@ -8,10 +8,21 @@ class Solution:
             result.append(0)
 
         for i in range(len(p),len(s)):
+            
+            if window[s[i-len(p)]] == 0:
+                del window[s[i-len(p)]] 
+            else:
+                window[s[i-len(p)]] -= 1
+            
             window[s[i]] += 1
-            window[s[i-len(p)]] -= 1
+
+
+            
+            
 
             if window == target:
                 result.append(i-len(p)+1)
+
+        
         
         return result
