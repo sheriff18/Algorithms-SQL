@@ -8,13 +8,14 @@ class Solution:
 
         while right < n:
             total += nums[right]
-            right += 1
+            
 
             while total >= target:
-                length = right - left 
+                length = right - left + 1
                 
                 min_len = min(min_len, length)
                 total -= nums[left]
                 left += 1
+            right +=1
                 
         return min_len if min_len != float('inf') else 0
