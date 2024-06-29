@@ -6,7 +6,7 @@ class Solution:
 
         for i in range(n):
             hashing[s[i]] = i
-            print(hashing)
+            
         
             if -1 not in hashing.values():
 
