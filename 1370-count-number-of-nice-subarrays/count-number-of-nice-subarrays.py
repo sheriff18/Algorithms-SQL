@@ -5,13 +5,10 @@ class Solution:
         cnt = running_sum = 0
 
         for i in range(n):
+            # Convert values to 0s and 1s
             
-            if nums[i] % 2 == 0:
-                nums[i] = 0
-            else:
-                nums[i] = 1
             
-            running_sum += nums[i]
+            running_sum += nums[i] % 2
 
             if running_sum == k:
                 cnt += 1
