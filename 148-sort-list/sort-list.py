@@ -26,7 +26,7 @@ class Solution:
         right = self.sortList(right)
         
         def merge_sort(left, right):
-            dummy = ListNode(0)
+            dummy = ListNode(-1)
             curr = dummy
             while left and right:
                 if left.val < right.val:
