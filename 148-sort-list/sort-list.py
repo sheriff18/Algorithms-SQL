@@ -1,3 +1,5 @@
+from typing import Optional
+
 # Definition for singly-linked list.
 class ListNode:
     def __init__(self, val=0, next=None):
@@ -6,25 +8,40 @@ class ListNode:
 
 class Solution:
     def sortList(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        if not head:
+        if not head or not head.next:
             return head
         
-        arr = []
+        def findMid(head):
+            slow, fast = head, head.next
+            while fast and fast.next:
+                slow = slow.next
+                fast = fast.next.next
+            return slow
+
+        mid = findMid(head)
+        right = mid.next
+        mid.next = None
         
-        # Traverse the linked list and store node values in the list
-        temp = head
-        while temp is not None:
-            arr.append(temp.val)
-            temp = temp.next
+        left = self.sortList(head)
+        right = self.sortList(right)
         
-        # Sort the list containing node values
-        arr.sort()
-        
-        # Reassign sorted values to the linked list nodes
-        temp = head
-        for value in arr:
-            temp.val = value
-            temp = temp.next
-        
-        # Return the head of the sorted linked list
-        return head
+        def merge_sort(left, right):
+            dummy = ListNode(0)
+            curr = dummy
+            while left and right:
+                if left.val < right.val:
+                    curr.next = left
+                    left = left.next
+                else:
+                    curr.next = right
+                    right = right.next
+                curr = curr.next
+            
+            if left:
+                curr.next = left
+            if right:
+                curr.next = right
+                
+            return dummy.next
+
+        return merge_sort(left, right)
