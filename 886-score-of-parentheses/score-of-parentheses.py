@@ -10,5 +10,5 @@ class Solution:
                 v = stack.pop()
                 stack[-1] += max(2*v,1)
 
-        return stack.pop()
+        return stack[-1]
         
