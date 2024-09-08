@@ -4,10 +4,12 @@ class Solution:
 
         stack = []
 
-        for char in s:
-            if char in brackets:
-                stack.append(char)
-            elif not stack or char != brackets[stack.pop()]:
-                return False
+        for br in s:
+            if br in brackets:
+                stack.append(br)
+            else:
+                if not stack or br !=  brackets[stack.pop()]:
+                    return False
         return len(stack) == 0
+            
 
