@@ -8,28 +8,28 @@ Through this project, you'll learn how SQL can be used to tackle algorithmic cha
 # Algorithms Covered
 The Algorithms-SQL project covers a wide range of algorithms, implemented entirely using SQL:
 
-Sorting Algorithms:
-Bubble Sort
-Insertion Sort
-Quick Sort
-Merge Sort
-Heap Sort
-Searching Algorithms:
-Binary Search
-Linear Search
-Index-based Search
-Graph Algorithms:
-Breadth-First Search (BFS)
-Depth-First Search (DFS)
-Shortest Path Algorithm (Dijkstra’s Algorithm)
-Recursive Algorithms:
-Fibonacci Series
-Factorial Computation
-Recursive Tree Traversals
-Mathematical Algorithms:
-Prime Number Identification
-Greatest Common Divisor (GCD)
-Least Common Multiple (LCM)
+# Sorting Algorithms:
+Bubble Sort,
+Insertion Sort,
+Quick Sort,
+Merge Sort,
+Heap Sort,
+# Searching Algorithms:
+Binary Search,
+Linear Search,
+Index-based Search,
+# Graph Algorithms:
+Breadth-First Search (BFS),
+Depth-First Search (DFS),
+Shortest Path Algorithm (Dijkstra’s Algorithm),
+# Recursive Algorithms:
+Fibonacci Series,
+Factorial Computation,
+Recursive Tree Traversals,
+# Mathematical Algorithms:
+Prime Number Identification,
+Greatest Common Divisor (GCD),
+Least Common Multiple (LCM),
 Each algorithm is implemented using SQL queries, and results are stored and evaluated based on the dataset size, query execution time, and memory usage.
 
 # SQL Optimization Techniques
