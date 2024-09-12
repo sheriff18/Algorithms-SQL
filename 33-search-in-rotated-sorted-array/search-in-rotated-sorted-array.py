@@ -23,7 +23,6 @@
 #         return -1
 
 
-from typing import List
 
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
@@ -37,7 +36,7 @@ class Solution:
                 return mid
 
             # Check if the left half is sorted
-            if nums[low] <= nums[mid]:
+            elif nums[low] <= nums[mid]:
                 # Target lies within the sorted left half
                 if nums[low] <= target < nums[mid]:
                     high = mid - 1
